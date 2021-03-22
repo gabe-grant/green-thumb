@@ -35,7 +35,8 @@ export const Register = (props) => {
                         .then(res => res.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
-                                localStorage.setItem("green-thumb_customer", createdUser.id)
+                                //this is actually .setItem(keyName, keyValue)
+                                localStorage.setItem("users", createdUser.id)
                                 history.push("/")
                             }
                         })

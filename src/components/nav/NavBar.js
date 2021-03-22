@@ -9,10 +9,10 @@ export const NavBar = (props) => {
                 <Link className="navbar__link" to="/plants">GreenThumb</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/locations">Add Plant</Link>
+                <Link className="navbar__link" to="/addplant">Add Plant</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/animals">Expenses</Link>
+                <Link className="navbar__link" to="/expenses">Expenses</Link>
             </li>
         </ul>
     )

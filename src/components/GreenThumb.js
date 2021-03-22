@@ -10,7 +10,7 @@ export const GreenThumb = () => (
   <>
     <Route
       render={() => {
-        if (localStorage.getItem("green-thumb_customer")) {
+        if (localStorage.getItem("users")) {
           return (
             <>
               <NavBar />

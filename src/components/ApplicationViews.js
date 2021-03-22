@@ -10,7 +10,7 @@ import { PlantSearch } from "./plants/PlantSearch"
 export const ApplicationViews = () => {
     return (
         <>
-            <Route exact path="/">
+            <Route exact path="/plants">
                 <Home />
             </Route>
 
@@ -19,7 +19,7 @@ export const ApplicationViews = () => {
                         <Route exact path="/plants/detail/:plantId(\d+)">
 		                    <PlantDetail />
 	                    </Route>
-                        <Route path="/animals/edit/:plantId(\d+)">
+                        <Route path="/plants/edit/:plantId(\d+)">
                             <PlantForm />
                         </Route>
                         <Route exact path="/plants">

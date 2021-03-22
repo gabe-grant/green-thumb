@@ -2,14 +2,12 @@ import React, { useContext, useEffect, useState } from "react"
 import { PlantContext } from "./PlantProvider"
 import { PlantCard } from "./PlantCard"
 import "./Plant.css"
-import { useHistory } from "react-router-dom"
 
 export const PlantList = () => {
   const { plants, getPlants, searchTerms } = useContext(PlantContext)
 
   // Since you are no longer ALWAYS displaying all of the animals
   const [ filteredPlants, setFiltered ] = useState([])
-  const history = useHistory()
 
   // Empty dependency array - useEffect only runs after first render
   useEffect(() => {
@@ -34,14 +32,11 @@ export const PlantList = () => {
   return (
     <>
       <h1>Plants</h1>
-
-      <button onClick={() => history.push("/plants/create")}>
-          New Plant
-      </button>
+      
       <div className="plants">
       {
         filteredPlants.map(plant => {
-          return <PlantCard key={plant.id} animal={plant} />
+          return <PlantCard key={plant.id} plant={plant} />
         })
       }
       </div>
