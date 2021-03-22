@@ -21,13 +21,15 @@ export const PlantList = () => {
   useEffect(() => {
     if (searchTerms !== "") {
       // If the search field is not blank, display matching animals
-      const subset = plants.filter(plant => plant.name.toLowerCase().includes(searchTerms))
+      const subset = plants.filter(plant => plant.commonName.toLowerCase().includes(searchTerms))
       setFiltered(subset)
     } else {
       // If the search field is blank, display all animals
       setFiltered(plants)
     }
   }, [searchTerms, plants])
+
+  console.log(filteredPlants)
 
   return (
     <>

@@ -37,14 +37,14 @@ export const PlantProvider = (props) => {
     }
 
     const releasePlant = plantId => {
-        return fetch(`http://localhost:8088/animals/${plantId}`, {
+        return fetch(`http://localhost:8088/plants/${plantId}`, {
             method: "DELETE"
         })
             .then(getPlants)
     }
 
     const updatePlant = plant => {
-        return fetch(`http://localhost:8088/animals/${plant.id}`, {
+        return fetch(`http://localhost:8088/plants/${plant.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"
