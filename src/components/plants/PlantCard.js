@@ -6,9 +6,10 @@ export const PlantCard = ({ plant }) => (
   
     <section className="plant">
         <h3 className="plant__name">
-          <Link to={`/plants/detail/${plant.id}`}>
-            { plant.commonName }
-          </Link>
+          <Link to={`/plants/detail/${plant.id}`}>{plant.commonName}</Link>
         </h3>
+        <h5>{plant.scientificName}</h5>
+        <p>{plant.description}</p>
+        <p>{plant.careInstructions}</p>
     </section>
 )

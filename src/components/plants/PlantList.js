@@ -27,7 +27,7 @@ export const PlantList = () => {
     }
   }, [searchTerms, plants])
 
-  console.log(filteredPlants)
+  
 
   return (
     <>
