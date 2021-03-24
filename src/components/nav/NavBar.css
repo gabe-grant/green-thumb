@@ -1,7 +1,7 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: flex-end;
 }
 
 .navbar__item {
@@ -9,6 +9,25 @@
     list-style-type: none;
 }
 
-.navbar__item {
-    flex-wrap: right;
+ul {
+    display: flex;
+    justify-content: space-around;
+    width: 50rem;
+    margin-right: 4rem;
+}
+
+/* .home-button {
+    display: flex;
+    align-self: flex-end;
+    
+} */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.poopybutt {
+    margin-left: 3rem;
 }

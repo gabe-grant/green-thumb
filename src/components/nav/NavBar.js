@@ -4,10 +4,12 @@ import "./NavBar.css"
 
 export const NavBar = (props) => {
     return (
+        <>
+        <div className="navigation">
+        <div className="home-button">
+            <Link className="poopybutt" to="/plants">GreenThumb</Link>
+        </div>
         <ul className="navbar">
-            <li className="navbar__item home">
-                <Link className="navbar__link" to="/plants">GreenThumb </Link>
-            </li>
             <li className="navbar__item tab">
                 <Link className="navbar__link" to="/plants/create">Add Plant</Link>
             </li>
@@ -15,5 +17,7 @@ export const NavBar = (props) => {
                 <Link className="navbar__link" to="/expenses">Expenses</Link>
             </li>
         </ul>
+        </div>
+        </>
     )
 }

@@ -11,5 +11,6 @@ export const PlantCard = ({ plant }) => (
         <h5>{plant.scientificName}</h5>
         <p>{plant.description}</p>
         <p>{plant.careInstructions}</p>
+        <button className="notesDetails" onClick>Notes/Detals --></button>
     </section>
 )
