@@ -1,6 +1,6 @@
 // This code imports the main React library, and two functions that it exports. 
 import React, { useState, createContext } from "react"
-// We will useState to hold and set the array of animals.
+// We will useState to hold and set the array of plants.
 
 // A context stores a certain kind of data to be used in your application. Therefore, when you create a data provider component in React, you need to create a context.
 export const PlantContext = createContext()
@@ -26,13 +26,13 @@ export const PlantProvider = (props) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(plants)
+            body: JSON.stringify(plant)
         })
         .then(response => response.json())
     }
 
     const getPlantById = (id) => {
-        return fetch(`http://localhost:8088/plants/${id}?_expand=location&_expand=customer`)
+        return fetch(`http://localhost:8088/plants/${id}`)
             .then(res => res.json())
     }
 

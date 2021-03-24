@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
-import { PlantContext } from "./PlantProvider"
 
+import { PlantContext } from "./PlantProvider"
 import "./Plant.css"
 import { useHistory, useParams } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ export const PlantForm = () => {
     //Controlled component
     const handleControlledInputChange = (event) => {
 
-      //create a copy of a piece of state and THEN set state with the function that changes it
+      //create a clone of state and THEN set state with the function that changes it
       //in this case...an object, in an array of objects of plants
       const newPlant = { ...plant }
 
@@ -47,16 +47,19 @@ export const PlantForm = () => {
           updatePlant({
               id: plant.id,
               commonName: plant.commonName,
-              scientificName: plant.scientificName
+              scientificName: plant.scientificName,
+              description: plant.description,
+              careInstructions: plant.careInstructions
           })
           //pushes a new entry onto the history stack
           .then(() => history.push(`/plants/detail/${plant.id}`))
         } else {
           //"POST" method from the context provider -ADD
           addPlant({
-              name: plant.name,
               commonName: plant.commonName,
-              scientificName: plant.scientificName
+              scientificName: plant.scientificName,
+              description: plant.description,
+              careInstructions: plant.careInstructions
           })
           //pushes a new entry onto the history stack
           .then(() => history.push("/plants"))
@@ -85,7 +88,7 @@ export const PlantForm = () => {
         <h2 className="plantForm__title">New Plant</h2>
         <fieldset>
           <div className="form-group">
-            <label htmlFor="plantCommonName">Plant common name: </label>
+            <label htmlFor="plantCommonName">Common plant name: </label>
             <input type="text" id="commonName" name="commonName" required autoFocus className="form-control"
             placeholder="Common name for plant"
             onChange={handleControlledInputChange}
@@ -94,11 +97,29 @@ export const PlantForm = () => {
         </fieldset>
         <fieldset>
           <div className="form-group">
-            <label htmlFor="plantScientificName">Plant scientific name: </label>
-            <input type="text" id="scientificName" name="scientificName" required autoFocus className="form-control"
+            <label htmlFor="plantScientificName">Scientific plant name: </label>
+            <input type="text" id="scientificName" name="scientificName" required className="form-control"
             placeholder="Scientific name for plant"
             onChange={handleControlledInputChange}
             defaultValue={plant.scientificName}/>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="plantDescription">Plant description: </label>
+            <input type="text" id="plantDescription" name="description" required className="form-control"
+            placeholder="Description of plant"
+            onChange={handleControlledInputChange}
+            defaultValue={plant.description}/>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="plantCareInstructions">Care instructions: </label>
+            <input type="text" id="plantCareInstructions" name="careInstructions" required  className="form-control"
+            placeholder="Care instructions for plant"
+            onChange={handleControlledInputChange}
+            defaultValue={plant.careInstructions}/>
           </div>
         </fieldset>
         <button className="btn btn-primary"

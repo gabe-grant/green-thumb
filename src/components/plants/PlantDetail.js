@@ -20,7 +20,7 @@ useEffect(() => {
     }, [])
 
 const handleDelete = () => {
-    //handleDelete
+    //handleDelete calls the context provider deletePlant
     deletePlant(plant.id)
       .then(() => {
         //pushes the new entry on the history stack
@@ -31,13 +31,13 @@ const handleDelete = () => {
 return (
     <>
     <section className="plant">
-      <h3 className="plant__name">{plant.commonName}</h3>
+      <h3 className="plant_commonName">{plant.commonName}</h3>
+      <h5 className="plant_scientificName">{plant.scientificName}</h5>
+      <p>{plant.description}</p>
+      <p>{plant.careInstructions}</p>
     </section>
     <button onClick={handleDelete}>Delete plant</button>
-    <button onClick={() => {
-    //pushes the new entry on the history stack
-    history.push(`/plants/edit/${plant.id}`)
-    }}>Edit</button>
+    <button onClick={() => {history.push(`/plants/edit/${plant.id}`)}}>Edit</button>
     </>
   )
 }
