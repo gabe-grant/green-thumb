@@ -35,8 +35,8 @@ export const PlantList = () => {
       
       <div className="plants">
       {
-        filteredPlants.map(plant => {
-          return <PlantCard key={plant.id} plant={plant} />
+        filteredPlants.map(plantProp => {
+          return <PlantCard key={plantProp.id} plantProp={plantProp} />
         })
       }
       </div>
