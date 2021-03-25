@@ -1,26 +1,11 @@
 import React, { useContext, useEffect, useState} from "react"
 import "./Plant.css"
 import { Link } from "react-router-dom"
-import {PlantContext} from './PlantProvider'
-
-// import {NoteContext} from '../notes/NoteProvider'
-import { useParams, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 export const PlantCard = ({ plantProp }) => {
 
-  const { getPlantById } = useContext(PlantContext)
   const history = useHistory()
-  const {plantId} = useParams();
-  const [plant, setPlants] = useState([])
-
-  const newPlant = {...plant}
-
-  // useEffect(() => {
-  //   getPlantById(plantProp)
-  //   .then((response) => {
-  //     setPlants(response)
-  //   })
-  //   }, [])
 
   
   return (

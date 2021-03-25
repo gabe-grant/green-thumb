@@ -33,7 +33,6 @@ export const PlantProvider = (props) => {
 
     
     const getPlantById = (id) => {
-        console.log(id)
         return fetch(`http://localhost:8088/plants/${id}`)
             .then(res => res.json())
     }
