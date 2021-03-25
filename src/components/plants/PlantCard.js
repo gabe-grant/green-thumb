@@ -13,19 +13,15 @@ export const PlantCard = ({ plantProp }) => {
   const {plantId} = useParams();
   const [plant, setPlants] = useState([])
 
-  useEffect(() => {
-    getPlantById(plantId)
-    .then((response) => {
-      setPlants(response)
-    })
-    }, [])
+  const newPlant = {...plant}
 
   // useEffect(() => {
-  //     getPlantById(plantId)
-  //     .then(plant => {
-  //         setPlants(plant)
-  //     })
+  //   getPlantById(plantProp)
+  //   .then((response) => {
+  //     setPlants(response)
+  //   })
   //   }, [])
+
   
   return (
     <section className="plant">
@@ -35,7 +31,7 @@ export const PlantCard = ({ plantProp }) => {
         <h5>{plantProp.scientificName}</h5>
         <p>{plantProp.description}</p>
         <p>{plantProp.careInstructions}</p>
-        <button className="notesDetails" onClick={() => {history.push(`/notes/${plantProp.id}`)}}>Notes -->
+        <button className="notesDetails" onClick={() => {history.push(`/notes/details/${plantProp.id}`)}}>Notes -->
         </button>
     </section>
   )

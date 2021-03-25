@@ -9,7 +9,7 @@ import { PlantContext } from "../plants/PlantProvider"
 export const NoteList = () => {
   const { notes, getNotes } = useContext(NoteContext)
 
-  const {plantId} = useParams(PlantContext)
+  const {plantId} = useParams()
   // Empty dependency array - useEffect only runs after first render
   useEffect(() => {
       getNotes()
@@ -23,8 +23,9 @@ export const NoteList = () => {
       
       <div className="notes">
       {
-        notes.filter(note => {
-          return <NoteCard key={note.id} note={plantId} />
+        notes.filter(singleNote =>  +plantId === singleNote.plantId).map(note => {
+          debugger
+          return <NoteCard key={note.id} note={note} />
         })
       }
       </div>
