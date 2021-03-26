@@ -4,7 +4,7 @@ import { PlantContext } from '../plants/PlantProvider'
 import { NoteContext } from "./NoteProvider"
 import { NoteCard } from "./NoteCard"
 import "./Note.css"
-import { useParams } from "react-router"
+import { useHistory, useParams } from "react-router"
 import { useState } from "react/cjs/react.development"
 
 export const NoteList = () => {
@@ -18,6 +18,7 @@ export const NoteList = () => {
 
   //able to access global useParams for plantId
   const {plantId} = useParams()
+  const history = useHistory()
 
   useEffect(() => {
       getNotes().then(()=>
@@ -33,8 +34,8 @@ export const NoteList = () => {
   //currentPlant is now state and we want to display the commonName of the plant in the the useParams()
   return (
     <>
-      <h1>{currentPlant.commonName}</h1>
-      
+      <h1>{currentPlant.commonName}</h1><h3>{currentPlant.scientificName}</h3>
+      <button className="addEntry" onClick={() => {history.push(`/notes/entry/${plantId}`)}}>Add Entry</button>
       <div className="notes">
       {
         notes.filter(singleNote => +plantId === singleNote.plantId).map(note => {

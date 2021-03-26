@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from "react"
 
 import { NoteContext } from "./NoteProvider"
+import { PlantContext } from '../plants/PlantProvider'
 import "./Note.css"
 import { useHistory, useParams } from 'react-router-dom';
 
 export const NoteForm = () => {
     const { addNote, getNoteById, updateNote } = useContext(NoteContext)
+    const { getPlantById } = useContext(PlantContext)
 
     //for edit, hold on to state of plants in this view
     const [note, setNotes] = useState({})
@@ -15,6 +17,7 @@ export const NoteForm = () => {
 
     //return an object of the params for the route rendered
     const {noteId} = useParams();
+    const {plantId} = useParams()
 
     // the history hook for managing session history
 	const history = useHistory();
@@ -54,11 +57,12 @@ export const NoteForm = () => {
         } else {
           //"POST" method from the context provider -ADD
           addNote({
-                plantId: note.plantId,
-                message: note.message
+                plantId: +plantId,
+                message: note.message,
+                date: note.date
           })
           //pushes a new entry onto the history stack
-          .then(() => history.push("/notes"))
+          .then(() => history.push(`/notes/${plantId}`))
         }
       }
     }
@@ -66,11 +70,16 @@ export const NoteForm = () => {
     // Get plants. If plantId is in the URL, getPlantById
     useEffect(() => {
         if (noteId){
-          getNoteById(noteId)
-          .then(note => {
-              setNotes(note)
-              setIsLoading(false)
-          })
+        getNoteById(noteId)
+            .then(note => {
+                setNotes(note)
+                setIsLoading(false)
+        })
+        getPlantById(plantId)
+            .then(plant => {
+                setNotes(plant)
+                setIsLoading(false)
+        })
         } else {
           setIsLoading(false)
         }
@@ -81,12 +90,20 @@ export const NoteForm = () => {
     //since state controlls this component, we no longer need useRef(null) or ref
     return (
       <form className="noteForm">
-        <h2 className="noteForm__title">New Plant</h2>
+        <h2 className="noteForm__title">New Entry</h2>
         <fieldset>
           <div className="form-group">
-            <label htmlFor="noteMessage">Care instructions: </label>
+            <label htmlFor="noteDate">Today's date: </label>
+            <input type="date" id="noteDate" name="date" required className="form-control"
+            onChange={handleControlledInputChange}
+            defaultValue={note.date}/>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="noteMessage">Care Entry: </label>
             <textarea id="noteMessage" name="message" required autoFocus className="form-control"
-            placeholder="Care instructions for plant"
+            placeholder="What would you like to say?"
             onChange={handleControlledInputChange}
             defaultValue={note.message}/>
           </div>
