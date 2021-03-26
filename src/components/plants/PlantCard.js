@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState} from "react"
+import React from "react"
 import "./Plant.css"
 import { Link } from "react-router-dom"
 import { useHistory } from "react-router-dom"
@@ -16,7 +16,7 @@ export const PlantCard = ({ plantProp }) => {
         <h5>{plantProp.scientificName}</h5>
         <p>{plantProp.description}</p>
         <p>{plantProp.careInstructions}</p>
-        <button className="notesDetails" onClick={() => {history.push(`/notes/details/${plantProp.id}`)}}>Notes -->
+        <button className="notesDetails" onClick={() => {history.push(`/notes/${plantProp.id}`)}}>Notes -->
         </button>
     </section>
   )

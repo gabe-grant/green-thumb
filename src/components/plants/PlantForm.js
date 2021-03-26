@@ -107,7 +107,7 @@ export const PlantForm = () => {
         <fieldset>
           <div className="form-group">
             <label htmlFor="plantDescription">Plant description: </label>
-            <input type="text" id="plantDescription" name="description" required className="form-control"
+            <textarea id="plantDescription" name="description" required className="form-control"
             placeholder="Description of plant"
             onChange={handleControlledInputChange}
             defaultValue={plant.description}/>
@@ -116,7 +116,7 @@ export const PlantForm = () => {
         <fieldset>
           <div className="form-group">
             <label htmlFor="plantCareInstructions">Care instructions: </label>
-            <input type="text" id="plantCareInstructions" name="careInstructions" required  className="form-control"
+            <textarea id="plantCareInstructions" name="careInstructions" required  className="form-control"
             placeholder="Care instructions for plant"
             onChange={handleControlledInputChange}
             defaultValue={plant.careInstructions}/>

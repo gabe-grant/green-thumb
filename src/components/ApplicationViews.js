@@ -1,13 +1,14 @@
 import React from "react"
-import { Route } from "react-router-dom"
+import { Route, useParams } from "react-router-dom"
 import { Home } from "./Home"
 import { PlantProvider } from "./plants/PlantProvider"
 import { PlantList } from "./plants/PlantList"
 import { PlantForm } from './plants/PlantForm'
 import { PlantDetail } from './plants/PlantDetail'
 import { PlantSearch } from "./plants/PlantSearch"
-import { NoteContext, NoteProvider } from "./notes/NoteProvider"
+import { NoteProvider } from "./notes/NoteProvider"
 import { NoteList } from "./notes/NoteList"
+import { NoteForm } from './notes/NoteForm'
 
 export const ApplicationViews = () => {
     return (
@@ -31,8 +32,11 @@ export const ApplicationViews = () => {
                         <Route exact path="/plants/create">
                             <PlantForm />
                         </Route>
-                        <Route exact path="/notes/details/:plantId(\d+)">
+                        <Route exact path="/notes/:plantId(\d+)">
                             <NoteList />
+                        </Route>
+                        <Route exact path='/notes/entries/:plantId(\d+)'>
+                            <NoteForm />
                         </Route>
                 </NoteProvider>
             </PlantProvider>
