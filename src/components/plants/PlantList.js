@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
 import { PlantContext } from "./PlantProvider"
 import { PlantCard } from "./PlantCard"
+import { PlantSearch } from './PlantSearch'
+import { Home } from '../Home'
 import "./Plant.css"
 
 export const PlantList = () => {
@@ -31,12 +33,15 @@ export const PlantList = () => {
 
   return (
     <>
+      <Home />
       <h1>Plant Repository</h1>
-      
+      <PlantSearch />
       <div className="plants">
       {
-        filteredPlants.map(plantProp => {
-          return <PlantCard key={plantProp.id} plantProp={plantProp} />
+        filteredPlants.map(plantProp => { 
+          if (plantProp.userId == localStorage.getItem('users')) {
+            return <PlantCard key={plantProp.id} plantProp={plantProp} />
+          }
         })
       }
       </div>

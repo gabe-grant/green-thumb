@@ -1,21 +1,32 @@
 import React from "react"
 import { Route, useParams } from "react-router-dom"
+
 import { Home } from "./Home"
 import { PlantProvider } from "./plants/PlantProvider"
 import { PlantList } from "./plants/PlantList"
 import { PlantForm } from './plants/PlantForm'
 import { PlantDetail } from './plants/PlantDetail'
-import { PlantSearch } from "./plants/PlantSearch"
+// import { PlantSearch } from "./plants/PlantSearch"
 import { NoteProvider } from "./notes/NoteProvider"
 import { NoteList } from "./notes/NoteList"
 import { NoteForm } from './notes/NoteForm'
 
+import { Header } from './expenses/Header'
+import { Balance } from './expenses/Balance'
+import { IncomeExpenses } from "./expenses/IncomeExpenses"
+import { TransactionList } from "./expenses/TransactionList"
+import { AddTransaction } from "./expenses/AddTransaction"
+
 export const ApplicationViews = () => {
     return (
         <>
-            <Route exact path="/plants">
-                <Home />
-            </Route>
+            <PlantProvider>
+                <NoteProvider>
+                    <Route exact path="/">
+                        <PlantList />
+                    </Route>
+                </NoteProvider>
+            </PlantProvider>
 
             <PlantProvider>
                <NoteProvider>
@@ -26,7 +37,6 @@ export const ApplicationViews = () => {
                             <PlantForm />
                         </Route>
                         <Route exact path="/plants">
-                            <PlantSearch />
                             <PlantList />
                         </Route>
                         <Route exact path="/plants/create">
@@ -40,6 +50,14 @@ export const ApplicationViews = () => {
                         </Route>
                 </NoteProvider>
             </PlantProvider>
+            
+            <Route exact path='/expenses'>
+                <Header />
+                <Balance />
+                <IncomeExpenses />
+                <TransactionList />
+                <AddTransaction />
+            </Route>
         </>
     )
 }

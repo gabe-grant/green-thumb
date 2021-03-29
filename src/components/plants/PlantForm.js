@@ -50,7 +50,8 @@ export const PlantForm = () => {
               scientificName: plant.scientificName,
               description: plant.description,
               careInstructions: plant.careInstructions,
-              lastWaterDate: plant.date
+              lastWaterDate: plant.date,
+              userId: localStorage.getItem('users')
           })
           //pushes a new entry onto the history stack
           .then(() => history.push(`/plants/detail/${plant.id}`))
@@ -60,7 +61,8 @@ export const PlantForm = () => {
               commonName: plant.commonName,
               scientificName: plant.scientificName,
               description: plant.description,
-              careInstructions: plant.careInstructions
+              careInstructions: plant.careInstructions,
+              userId: localStorage.getItem('users')
           })
           //pushes a new entry onto the history stack
           .then(() => history.push("/plants"))
