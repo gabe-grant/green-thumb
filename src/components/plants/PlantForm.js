@@ -49,7 +49,8 @@ export const PlantForm = () => {
               commonName: plant.commonName,
               scientificName: plant.scientificName,
               description: plant.description,
-              careInstructions: plant.careInstructions
+              careInstructions: plant.careInstructions,
+              lastWaterDate: plant.date
           })
           //pushes a new entry onto the history stack
           .then(() => history.push(`/plants/detail/${plant.id}`))
@@ -120,6 +121,14 @@ export const PlantForm = () => {
             placeholder="Care instructions for plant"
             onChange={handleControlledInputChange}
             defaultValue={plant.careInstructions}/>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="lastWaterDate">Last water date: </label>
+            <input type="date" id="lastWaterDate" name="date" required className="form-control"
+            onChange={handleControlledInputChange}
+            defaultValue={plant.date}/>
           </div>
         </fieldset>
         <button className="btn btn-primary"

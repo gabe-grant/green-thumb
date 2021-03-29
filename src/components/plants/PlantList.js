@@ -31,7 +31,7 @@ export const PlantList = () => {
 
   return (
     <>
-      <h1>Plants</h1>
+      <h1>Plant Repository</h1>
       
       <div className="plants">
       {

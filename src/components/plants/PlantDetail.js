@@ -31,6 +31,7 @@ const handleDelete = () => {
 return (
     <>
     <section className="plant">
+      <div>Last water date: {plant.lastWaterDate}</div>
       <h3 className="plant_commonName">{plant.commonName}</h3>
       <h5 className="plant_scientificName">{plant.scientificName}</h5>
       <p>{plant.description}</p>
