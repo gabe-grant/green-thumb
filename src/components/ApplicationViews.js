@@ -15,7 +15,7 @@ import { Header } from './expenses/Header'
 import { Balance } from './expenses/Balance'
 import { IncomeExpenses } from "./expenses/IncomeExpenses"
 import { TransactionList } from "./expenses/TransactionList"
-import { AddTransaction } from "./expenses/AddTransaction"
+import { TransactionForm } from "./expenses/TransactionForm"
 import { ExpenseProvider } from './expenses/ExpenseProvider'
 
 export const ApplicationViews = () => {
@@ -58,7 +58,7 @@ export const ApplicationViews = () => {
                     <Balance />
                     <IncomeExpenses />
                     <TransactionList />
-                    <AddTransaction />
+                    <TransactionForm />
                 </Route>
             </ExpenseProvider>
         </>

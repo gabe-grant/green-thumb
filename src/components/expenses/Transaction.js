@@ -7,7 +7,7 @@ export const Transaction = ({ transaction }) => {
 
     const handleDelete = () => {
         deleteTransaction(transaction.id)
-      }
+    }
 
     const sign = transaction.amount < 0 ? '-' : '+';
 

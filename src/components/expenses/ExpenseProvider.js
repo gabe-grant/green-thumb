@@ -23,8 +23,19 @@ export const ExpenseProvider = ({ children }) => {
             .then(getTransactions)
     }
 
+    const addTransaction = trans => {
+        return fetch("http://localhost:8088/transactions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(trans)
+        })
+        .then(response => response.json())
+    }
+
     return (<ExpenseContext.Provider value={{
-        transactions, getTransactions, deleteTransaction}}>
+        transactions, getTransactions, deleteTransaction, addTransaction}}>
         {children}
     </ExpenseContext.Provider>)
 }
