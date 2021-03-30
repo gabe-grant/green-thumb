@@ -1,5 +1,4 @@
 import React, { useContext } from "react"
-import { useHistory, useParams } from "react-router"
 import "./Note.css"
 import { NoteContext } from './NoteProvider'
 

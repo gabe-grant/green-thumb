@@ -1,4 +1,5 @@
 import React from 'react'
+import './Expense.css'
 
 export const IncomeExpenses = () => {
     return (

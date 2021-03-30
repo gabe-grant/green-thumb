@@ -1,0 +1,13 @@
+* {
+    
+}
+
+.expenseHeader {
+    align-items: center;
+}
+
+.inc-exp-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

@@ -16,6 +16,7 @@ import { Balance } from './expenses/Balance'
 import { IncomeExpenses } from "./expenses/IncomeExpenses"
 import { TransactionList } from "./expenses/TransactionList"
 import { AddTransaction } from "./expenses/AddTransaction"
+import { ExpenseProvider } from './expenses/ExpenseProvider'
 
 export const ApplicationViews = () => {
     return (
@@ -51,13 +52,15 @@ export const ApplicationViews = () => {
                 </NoteProvider>
             </PlantProvider>
             
-            <Route exact path='/expenses'>
-                <Header />
-                <Balance />
-                <IncomeExpenses />
-                <TransactionList />
-                <AddTransaction />
-            </Route>
+            <ExpenseProvider>
+                <Route exact path='/expenses'>
+                    <Header />
+                    <Balance />
+                    <IncomeExpenses />
+                    <TransactionList />
+                    <AddTransaction />
+                </Route>
+            </ExpenseProvider>
         </>
     )
 }
