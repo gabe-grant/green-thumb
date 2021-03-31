@@ -1,0 +1,71 @@
+
+.budget-header {
+    display: flex;
+    justify-content: center;
+}
+
+.balance-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.balance-box h4 {
+    margin-bottom: -1rem;
+}
+
+.balance-box h1 {
+    margin-bottom: -.5rem;
+}
+
+.inc-exp-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20rem;
+    margin: 0 auto;
+}
+
+.inc-exp-container p {
+    display: flex;
+    justify-content: center;
+}
+
+.transaction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.transaction-container h3 {
+    margin-bottom: -.5rem;
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.single-transaction {
+    display: flex;
+    justify-content: center;
+}
+
+.transaction-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-control {
+    margin: .5em;
+}
+
+.add-transaction-btn {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+

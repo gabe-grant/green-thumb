@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router'
 import { TransactionContext } from './TransactionProvider'
+import './Budget.css'
 
 export const TransactionForm = () => {
     // const [text, setText] = useState({})
@@ -23,29 +24,29 @@ export const TransactionForm = () => {
         text: transaction.text,
         amount: +transaction.amount
       })
-      .then(() => history.push("/expenses"))
+      .then(() => history.push("/budget"))
     }
 
     return (
-        <>
-        <h3>Add new transaction</h3>
-        <form>
-          <div className="form-control">
-            <label htmlFor="transactionText">Text<br /></label>
-            <input type="text" id="transactionText" name="text" required
-            onChange={handleControlledInputChange} 
-            placeholder="Enter text..." 
-            defaultValue={transaction.text}/>
-          </div>
-          <div className="form-control">
-            <label htmlFor="transactionAmount">Amount<br /></label>
-            <input type="number" id="transactionAmount" name="amount" required
-            onChange={handleControlledInputChange} 
-            placeholder="Enter amount..." 
-            defaultValue={transaction.amount}/>
-          </div>
-          <button className="btn" onClick={handleAdd}>Add transaction</button>
-        </form>
-        </>
+        <div className="transaction-form">
+            <h3>Add new transaction</h3>
+            <form>
+              <div className="form-control">
+                <label htmlFor="transactionText">Text<br /></label>
+                <input type="text" id="transactionText" name="text" required
+                onChange={handleControlledInputChange} 
+                placeholder="Enter text..." 
+                defaultValue={transaction.text}/>
+              </div>
+              <div className="form-control">
+                <label htmlFor="transactionAmount">Amount<br /></label>
+                <input type="number" id="transactionAmount" name="amount" required
+                onChange={handleControlledInputChange} 
+                placeholder="Enter amount..." 
+                defaultValue={transaction.amount}/>
+              </div>
+              <button className="add-transaction-btn" onClick={handleAdd}>Add transaction</button>
+            </form>
+        </div>
     )
 }

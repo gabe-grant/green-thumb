@@ -15,11 +15,11 @@ export const PlantCard = ({ plantProp }) => {
   
   return (
     <section className="plant">
-        <div>Last water date: {plantProp.lastWaterDate}</div>
-        <h3 className="plant__name">{plantProp.commonName}</h3>
+        <div className="last-water-date">Last water date: {plantProp.lastWaterDate}</div>
+        <h2 className="plant__name">{plantProp.commonName}</h2>
         <h5>{plantProp.scientificName}</h5>
-        <p>{plantProp.description}</p>
-        <p>{plantProp.careInstructions}</p>
+        <p><strong>Description:</strong><br />{plantProp.description}</p>
+        <p><strong>Care Instrucions:</strong><br />{plantProp.careInstructions}</p>
         <button className="plantButtons" onClick={() => {history.push(`/notes/${plantProp.id}`)}}>Notes -->
         </button>
         <button className="plantButtons" onClick={() => {history.push(`/plants/detail/${plantProp.id}`)}}>Details -->

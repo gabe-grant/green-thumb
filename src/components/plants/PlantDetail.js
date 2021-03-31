@@ -31,11 +31,11 @@ const handleDelete = () => {
 return (
     <>
     <section className="plant">
-      <div>Last water date: {plant.lastWaterDate}</div>
-      <h3 className="plant_commonName">{plant.commonName}</h3>
-      <h5 className="plant_scientificName">{plant.scientificName}</h5>
-      <p>{plant.description}</p>
-      <p>{plant.careInstructions}</p>
+        <div className="last-water-date">Last water date: {plant.lastWaterDate}</div>
+        <h2 className="plant__name">{plant.commonName}</h2>
+        <h5>{plant.scientificName}</h5>
+        <p><strong>Description:</strong><br />{plant.description}</p>
+        <p><strong>Care Instrucions:</strong><br />{plant.careInstructions}</p>
     </section>
     <button onClick={handleDelete}>Delete plant</button>
     <button onClick={() => {history.push(`/plants/edit/${plant.id}`)}}>Edit</button>

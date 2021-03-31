@@ -34,7 +34,8 @@ export const NoteList = () => {
   //currentPlant is now state and we want to display the commonName of the plant in the the useParams()
   return (
     <>
-      <h1>{currentPlant.commonName}</h1><h3>{currentPlant.scientificName}</h3>
+      <h2>{currentPlant.commonName}</h2>
+      <h5>{currentPlant.scientificName}</h5>
       <button className="addEntry" onClick={() => {history.push(`/notes/entry/${plantId}`)}}>Add Entry</button>
       <div className="notes">
       {

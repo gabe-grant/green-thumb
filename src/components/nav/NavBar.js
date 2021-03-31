@@ -7,7 +7,7 @@ export const NavBar = (props) => {
         <>
         <div className="navigation">
         <div className="home-button">
-            <Link className="poopybutt" to="/plants">GreenThumb</Link>
+            <Link className="poopybutt" to="/plants">Plants</Link>
         </div>
         <ul className="navbar">
             <li className="navbar__item tab">

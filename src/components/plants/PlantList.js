@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { PlantContext } from "./PlantProvider"
 import { PlantCard } from "./PlantCard"
 import { PlantSearch } from './PlantSearch'
-import { Home } from '../Header'
+import { Header } from '../Header'
 import "./Plant.css"
 
 export const PlantList = () => {
@@ -33,7 +33,7 @@ export const PlantList = () => {
 
   return (
     <>
-      <Home />
+      <Header />
       <h1>Plant Repository</h1>
       <PlantSearch />
       <div className="plants">

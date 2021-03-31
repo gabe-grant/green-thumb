@@ -10,3 +10,8 @@
     padding: 1em;
     border: 1px solid darkgreen;
   }
+
+  .last-water-date {
+    display: flex;
+    justify-content: flex-end;
+  }
