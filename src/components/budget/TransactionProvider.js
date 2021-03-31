@@ -4,9 +4,9 @@ import { createContext, useState } from 'react'
 
 
 //Creating the context of transactions for the other files
-export const ExpenseContext = createContext();
+export const TransactionContext = createContext();
 
-export const ExpenseProvider = ({ children }) => {
+export const TransactionProvider = ({ children }) => {
     const [transactions, setTransactions] = useState([])
 
 
@@ -34,8 +34,8 @@ export const ExpenseProvider = ({ children }) => {
         .then(response => response.json())
     }
 
-    return (<ExpenseContext.Provider value={{
+    return (<TransactionContext.Provider value={{
         transactions, getTransactions, deleteTransaction, addTransaction}}>
         {children}
-    </ExpenseContext.Provider>)
+    </TransactionContext.Provider>)
 }

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react'
-import { ExpenseContext } from './ExpenseProvider'
+import { TransactionContext } from './TransactionProvider'
 import { Transaction } from './Transaction'
 
 export const TransactionList = () => {
-    const { transactions, getTransactions} = useContext(ExpenseContext);
+    const { transactions, getTransactions} = useContext(TransactionContext);
 
     useEffect(() => {
         getTransactions()

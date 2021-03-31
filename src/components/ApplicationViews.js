@@ -1,22 +1,22 @@
 import React from "react"
-import { Route, useParams } from "react-router-dom"
+import { Route } from "react-router-dom"
 
-import { Home } from "./Home"
+
 import { PlantProvider } from "./plants/PlantProvider"
 import { PlantList } from "./plants/PlantList"
 import { PlantForm } from './plants/PlantForm'
 import { PlantDetail } from './plants/PlantDetail'
-// import { PlantSearch } from "./plants/PlantSearch"
+
 import { NoteProvider } from "./notes/NoteProvider"
 import { NoteList } from "./notes/NoteList"
 import { NoteForm } from './notes/NoteForm'
 
-import { Header } from './expenses/Header'
-import { Balance } from './expenses/Balance'
-import { IncomeExpenses } from "./expenses/IncomeExpenses"
-import { TransactionList } from "./expenses/TransactionList"
-import { TransactionForm } from "./expenses/TransactionForm"
-import { ExpenseProvider } from './expenses/ExpenseProvider'
+import { BudgetHeader } from './budget/BudgetHeader'
+import { BudgetBalance } from './budget/BudgetBalance'
+import { IncomeExpenses } from "./budget/IncomeExpenses"
+import { TransactionList } from "./budget/TransactionList"
+import { TransactionForm } from "./budget/TransactionForm"
+import { TransactionProvider } from './budget/TransactionProvider'
 
 export const ApplicationViews = () => {
     return (
@@ -52,15 +52,15 @@ export const ApplicationViews = () => {
                 </NoteProvider>
             </PlantProvider>
             
-            <ExpenseProvider>
-                <Route exact path='/expenses'>
-                    <Header />
-                    <Balance />
+            <TransactionProvider>
+                <Route exact path='/budget'>
+                    <BudgetHeader />
+                    <BudgetBalance />
                     <IncomeExpenses />
                     <TransactionList />
                     <TransactionForm />
                 </Route>
-            </ExpenseProvider>
+            </TransactionProvider>
         </>
     )
 }

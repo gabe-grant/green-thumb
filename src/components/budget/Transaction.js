@@ -1,9 +1,9 @@
 import React, { useContext, useHistory } from 'react'
-import { ExpenseContext } from './ExpenseProvider';
+import { TransactionContext } from './TransactionProvider';
 
 
 export const Transaction = ({ transaction }) => {
-    const { deleteTransaction } = useContext(ExpenseContext)
+    const { deleteTransaction } = useContext(TransactionContext)
 
     const handleDelete = () => {
         deleteTransaction(transaction.id)

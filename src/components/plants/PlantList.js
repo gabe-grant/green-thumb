@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { PlantContext } from "./PlantProvider"
 import { PlantCard } from "./PlantCard"
 import { PlantSearch } from './PlantSearch'
-import { Home } from '../Home'
+import { Home } from '../Header'
 import "./Plant.css"
 
 export const PlantList = () => {

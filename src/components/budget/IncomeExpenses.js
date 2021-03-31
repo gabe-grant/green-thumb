@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import './Expense.css'
-import { ExpenseContext } from './ExpenseProvider'
+import './Budget.css'
+import { TransactionContext } from './TransactionProvider'
 
 export const IncomeExpenses = () => {
-    const { transactions } = useContext(ExpenseContext);
+    const { transactions } = useContext(TransactionContext);
 
 
     const amounts = transactions.map(transaction => transaction.amount);

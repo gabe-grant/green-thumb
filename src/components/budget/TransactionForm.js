@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router'
-import { ExpenseContext } from './ExpenseProvider'
+import { TransactionContext } from './TransactionProvider'
 
 export const TransactionForm = () => {
     // const [text, setText] = useState({})
@@ -10,7 +10,7 @@ export const TransactionForm = () => {
 
     const history = useHistory()
 
-    const { addTransaction } = useContext(ExpenseContext);
+    const { addTransaction } = useContext(TransactionContext);
 
     const handleControlledInputChange = (event) => {
         const newTransaction = { ...transaction }
