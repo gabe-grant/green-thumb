@@ -3,9 +3,20 @@
 
 /*Typography
 --------------------------------------------------------------*/
-body,
 
-button,
+/* * {
+  background-color: darkgreen;
+} */
+
+body {
+  background-color: darkgreen;
+  
+}
+
+button {
+  background-color: aqua;
+}
+
 input,
 select,
 textarea {
@@ -20,22 +31,30 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: "Patua One", serif;
-  letter-spacing: 2px;
-}
+h6 
 
-p {
-  margin-bottom: 1.5em;
-  color: #d6fcff;
-  color: darkslateblue;
-}
+p 
 
 strong {
   font-weight: bold;
 }
 
-address {
-  margin: 0 0 1.5em;
+
+#main-header-title {
+  color: blueviolet;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -.02rem;
+}
+
+#main-header-subtitle {
+  display: flex;
+  justify-content: center;
+}
+
+.budget-border {
+  border: dotted 1px royalblue;
+  margin: auto 30rem;
+  background-color: slategrey;
 }
 

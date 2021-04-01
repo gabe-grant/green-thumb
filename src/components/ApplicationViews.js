@@ -1,6 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 
+import './GreenThumb.css'
 
 import { PlantProvider } from "./plants/PlantProvider"
 import { PlantList } from "./plants/PlantList"
@@ -55,10 +56,12 @@ export const ApplicationViews = () => {
             <TransactionProvider>
                 <Route exact path='/budget'>
                     <BudgetHeader />
-                    <BudgetBalance />
-                    <IncomeExpenses />
-                    <TransactionList />
-                    <TransactionForm />
+                    <div className="budget-border">
+                        <BudgetBalance />
+                        <IncomeExpenses />
+                        <TransactionList />
+                        <TransactionForm />
+                    </div>
                 </Route>
             </TransactionProvider>
         </>

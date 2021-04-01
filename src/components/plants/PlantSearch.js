@@ -9,7 +9,7 @@ export const PlantSearch = () => {
     <>
       Plant search:
       <input type="text"
-        className="input--wide"
+        className="search-input-box"
         onKeyUp={(event) => setSearchTerms(event.target.value)}
         placeholder="Search for a plant... " />
     </>

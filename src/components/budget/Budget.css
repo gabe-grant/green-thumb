@@ -2,6 +2,7 @@
 .budget-header {
     display: flex;
     justify-content: center;
+    margin: 30px 10px;
 }
 
 .balance-box {
@@ -45,6 +46,9 @@
     flex-direction: column;
 }
 
+.delete-transaction-btn {
+    background-color: red;
+}
 
 .single-transaction {
     display: flex;
@@ -57,14 +61,15 @@
     align-items: center;
 }
 
-.form-control {
+.form-input-boxes {
     margin: .5em;
 }
 
 .add-transaction-btn {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
+    
 }
 
 

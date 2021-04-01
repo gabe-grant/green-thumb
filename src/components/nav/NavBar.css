@@ -1,3 +1,15 @@
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blueviolet;
+}
+
+#poopybutt {
+    margin-left: 3rem;
+}
+
 .navbar {
     display: flex;
     flex-wrap: nowrap;
@@ -12,22 +24,11 @@
 ul {
     display: flex;
     justify-content: space-around;
-    width: 50rem;
-    margin-right: 4rem;
+    width: 30rem;
+    margin-right: 3rem;
 }
 
-/* .home-button {
-    display: flex;
-    align-self: flex-end;
-    
-} */
 
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.poopybutt {
-    margin-left: 3rem;
-}
+
+

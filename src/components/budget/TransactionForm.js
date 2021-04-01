@@ -29,17 +29,17 @@ export const TransactionForm = () => {
 
     return (
         <div className="transaction-form">
-            <h3>Add new transaction</h3>
+            <h4>Add new transaction</h4>
             <form>
-              <div className="form-control">
-                <label htmlFor="transactionText">Text<br /></label>
+              <div className="form-input-boxes">
+                <label htmlFor="transactionText">Text:<br /></label>
                 <input type="text" id="transactionText" name="text" required
                 onChange={handleControlledInputChange} 
                 placeholder="Enter text..." 
                 defaultValue={transaction.text}/>
               </div>
-              <div className="form-control">
-                <label htmlFor="transactionAmount">Amount<br /></label>
+              <div className="form-input-boxes">
+                <label htmlFor="transactionAmount">Amount:<br /></label>
                 <input type="number" id="transactionAmount" name="amount" required
                 onChange={handleControlledInputChange} 
                 placeholder="Enter amount..." 

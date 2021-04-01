@@ -1,4 +1,7 @@
 import React from "react";
+
+import "./GreenThumb.css"
+
 import { Route, Redirect } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationViews";
 import { NavBar } from "./nav/NavBar";
