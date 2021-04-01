@@ -2,6 +2,7 @@ import React from "react";
 
 import "./GreenThumb.css"
 
+import { Header } from './Header'
 import { Route, Redirect } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationViews";
 import { NavBar } from "./nav/NavBar";
@@ -16,6 +17,7 @@ export const GreenThumb = () => (
         if (localStorage.getItem("users")) {
           return (
             <>
+              <Header />
               <NavBar />
               <ApplicationViews />
             </>

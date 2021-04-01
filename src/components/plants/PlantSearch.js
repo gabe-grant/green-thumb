@@ -7,7 +7,6 @@ export const PlantSearch = () => {
 
   return (
     <>
-      Plant search:
       <input type="text"
         className="search-input-box"
         onKeyUp={(event) => setSearchTerms(event.target.value)}

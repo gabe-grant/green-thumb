@@ -3,7 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: blueviolet;
+    margin: 1rem auto;
+    background-image: url("https://smartgardenguide.com/wp-content/uploads/2019/10/zz-plant-stalks-falling-over-8.jpg");
 }
 
 #poopybutt {
@@ -14,6 +15,12 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-end;
+}
+
+.navbar__link {
+    background-color: wheat;
+    opacity: 0.78;
+    color: steelblue;
 }
 
 .navbar__item {

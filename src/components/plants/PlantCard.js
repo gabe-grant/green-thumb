@@ -15,7 +15,7 @@ export const PlantCard = ({ plantProp }) => {
   
   return (
     <section className="plant">
-        <div className="last-water-date">Last water date: {plantProp.lastWaterDate}</div>
+        <div className="last-water-date"><strong>Last water date</strong>: {plantProp.lastWaterDate}</div>
         <h2 className="plant__name">{plantProp.commonName}</h2>
         <h5>{plantProp.scientificName}</h5>
         <p><strong>Description:</strong><br />{plantProp.description}</p>

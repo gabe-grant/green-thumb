@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { PlantContext } from "./PlantProvider"
 import { PlantCard } from "./PlantCard"
 import { PlantSearch } from './PlantSearch'
-import { Header } from '../Header'
+
 import "./Plant.css"
 
 export const PlantList = () => {
@@ -33,9 +33,8 @@ export const PlantList = () => {
 
   return (
     <>
-      <Header />
-      <h1>Plant Repository</h1>
       <PlantSearch />
+      <h3>Plant Repository</h3>
       <div className="plants">
       {
         filteredPlants.map(plantProp => { 

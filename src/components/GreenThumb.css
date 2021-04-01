@@ -9,12 +9,15 @@
 } */
 
 body {
-  background-color: darkgreen;
-  
+  background-color: rgb(3, 149, 194);
+
 }
 
+
+
+
 button {
-  background-color: aqua;
+  background-color: gold
 }
 
 input,
@@ -33,28 +36,38 @@ h4,
 h5,
 h6 
 
-p 
+p {
+  
+}
 
 strong {
   font-weight: bold;
 }
 
+.main-header {
+  
+}
 
 #main-header-title {
-  color: blueviolet;
+  color:gold;
   display: flex;
   justify-content: center;
   margin-bottom: -.02rem;
+  margin-top: 0;
+  background-color: mediumseagreen;
+  
 }
 
 #main-header-subtitle {
   display: flex;
   justify-content: center;
+  color: wheat;
+  background-color: mediumseagreen;
 }
 
 .budget-border {
   border: dotted 1px royalblue;
-  margin: auto 30rem;
+  margin: auto 30%;
   background-color: slategrey;
 }
 

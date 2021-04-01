@@ -1,26 +1,61 @@
 .plants {
-
+    
+    margin: 2rem 2rem;
+    margin-top: 2rem;
 }
   
 .plant {
     flex-basis: 28%;
-    margin: 1em;
+    margin: 1.5rem 1rem;
     padding: 1em;
-    border: 1px solid gold;
-  }
+    border: 4px solid gold;
+    border-style: double;
+    background-color: mediumseagreen;
+    opacity: 0.82;
+}
+
 
 .last-water-date {
     display: flex;
     justify-content: flex-end;
-  }
+    color: wheat;
+    
+    border-bottom: 2px solid steelblue;
+}
 
+.plantForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.plantForm fieldset {
+    margin: -.5rem 2rem;
+}
 
+.add-save-plant-btn {
+    display: flex;
+    justify-content: center;
+}
 
+p {
+  color: wheat;
+}
 
+h2 {
+  color: wheat;
+  
+}
 
+h1, h5 {
+  color: gold;
+}
 
-
-  .search-input-box {
+.search-input-box {
     background-color: gold;
-  }
+    opacity: 0.6;
+}
+
+.plantButtons {
+  color:steelblue;
+}
