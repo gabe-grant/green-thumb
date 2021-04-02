@@ -34,15 +34,17 @@ export const PlantList = () => {
   return (
     <>
       <PlantSearch />
-      <h3>Plant Repository</h3>
-      <div className="plants">
-      {
-        filteredPlants.map(plantProp => { 
-          if (plantProp.userId == localStorage.getItem('users')) {
-            return <PlantCard key={plantProp.id} plantProp={plantProp} />
+        <div>
+          <h2 className="plant-list-title">Plant Repository</h2>
+          <div className="plants">
+          {
+            filteredPlants.map(plantProp => { 
+              if (plantProp.userId == localStorage.getItem('users')) {
+                return <PlantCard key={plantProp.id} plantProp={plantProp} />
+              }
+            })
           }
-        })
-      }
+       </div>
       </div>
     </>
   )

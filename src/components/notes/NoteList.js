@@ -33,17 +33,21 @@ export const NoteList = () => {
 
   //currentPlant is now state and we want to display the commonName of the plant in the the useParams()
   return (
-    <>
+  <>
+    <div className="notes">
+      <div className="poopierbutt">
+        <button className="add-entry-btn" onClick={() => {history.push(`/notes/entry/${plantId}`)}}>Add Entry</button>
+      </div>
       <h2>{currentPlant.commonName}</h2>
       <h5>{currentPlant.scientificName}</h5>
-      <button className="addEntry" onClick={() => {history.push(`/notes/entry/${plantId}`)}}>Add Entry</button>
-      <div className="notes">
-      {
-        notes.filter(singleNote => +plantId === singleNote.plantId).map(note => {
-          return <NoteCard key={note.id} note={note} />
-        })
-      }
-      </div>
-    </>
+        
+        {
+          notes.filter(singleNote => +plantId === singleNote.plantId).map(note => {
+            return <NoteCard key={note.id} note={note} />
+          })
+        }
+
+    </div>
+  </>
   )
 }

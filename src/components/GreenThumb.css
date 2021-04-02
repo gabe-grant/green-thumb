@@ -17,7 +17,9 @@ body {
 
 
 button {
-  background-color: gold
+  background-color: gold;
+  font-weight: bold;
+  opacity: 0.86;
 }
 
 input,
@@ -49,25 +51,28 @@ strong {
 }
 
 #main-header-title {
-  color:gold;
+  color: wheat;
   display: flex;
   justify-content: center;
   margin-bottom: -.02rem;
   margin-top: 0;
-  background-color: mediumseagreen;
+  background-color: rgb(60, 179, 149);
   
 }
 
 #main-header-subtitle {
   display: flex;
   justify-content: center;
-  color: wheat;
-  background-color: mediumseagreen;
+  
+  color:gold;
+  background-color:rgb(60, 179, 149);
 }
 
 .budget-border {
   border: dotted 1px royalblue;
   margin: auto 30%;
-  background-color: slategrey;
+  background-color: rgb(60, 179, 149);
+  border: 4px solid gold;
+  border-style: double;
 }
 

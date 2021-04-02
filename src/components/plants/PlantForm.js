@@ -87,8 +87,9 @@ export const PlantForm = () => {
 
     //since state controlls this component, we no longer need useRef(null) or ref
     return (
+      <>
+      <h2 className="plantForm__title">New Plant</h2>
       <form className="plantForm">
-        <h2 className="plantForm__title">New Plant</h2>
         <fieldset>
           <div className="form-group">
             <label htmlFor="plantCommonName">Common plant name: </label>
@@ -141,5 +142,6 @@ export const PlantForm = () => {
           }}>
         {plantId ? <>Save</> : <>Add Plant</>}</button>
       </form>
+      </>
     )
 }

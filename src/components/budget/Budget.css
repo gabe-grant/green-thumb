@@ -1,4 +1,15 @@
+li, label {
+    color: wheat;
+}
 
+span {
+    color: gold;
+}
+
+h4 {
+    margin: .5rem auto;
+    color: wheat;
+}
 .budget-header {
     display: flex;
     justify-content: center;
