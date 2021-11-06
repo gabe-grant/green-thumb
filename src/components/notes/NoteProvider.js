@@ -21,6 +21,7 @@ export const NoteProvider = (props) => {
             body: JSON.stringify(note)
         })
         .then(response => response.json())
+        // .then(getNotes)
     }
 
     
