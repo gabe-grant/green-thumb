@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from "react"
 import { PlantContext } from '../plants/PlantProvider'
 import { NoteContext } from "./NoteProvider"
 import { NoteCard } from "./NoteCard"
+import { NoteForm } from "./NoteForm"
 import "./Note.css"
 import { useHistory, useParams } from "react-router"
 import { useState } from "react/cjs/react.development"
@@ -15,15 +16,16 @@ export const NoteList = () => {
   //passing in the useParams variable
   //then call the function that sets state "setCurrentPlant"
   const [currentPlant, setCurrentPlant] = useState({})
+  // console.log(currentPlant);
 
   //able to access global useParams for plantId
   const {plantId} = useParams()
   const history = useHistory()
 
   useEffect(() => {
-      getNotes().then(()=>
-      getPlantById(plantId))
-      .then(setCurrentPlant)
+      getNotes().then(() =>
+        getPlantById(plantId))
+          .then(setCurrentPlant)
   }, [])
 
 
@@ -36,7 +38,12 @@ export const NoteList = () => {
   <>
     <div className="notes">
       <div className="poopierbutt">
-        <button className="add-entry-btn" onClick={() => {history.push(`/notes/entry/${plantId}`)}}>Add Entry</button>
+        <button 
+          className="add-entry-btn" 
+          onClick={() => {history.push(`/notes/entry/${plantId}`)}}>
+              Add Entry
+        </button>
+        
       </div>
       <h2>{currentPlant.commonName}</h2>
       <h5>{currentPlant.scientificName}</h5>

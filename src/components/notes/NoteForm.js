@@ -6,12 +6,15 @@ import "./Note.css"
 import { useHistory, useParams } from 'react-router-dom';
 
 export const NoteForm = () => {
-    const { addNote, getNoteById, updateNote } = useContext(NoteContext)
+    const { addNote, getNoteById, updateNote, getNotes } = useContext(NoteContext)
     const { getPlantById } = useContext(PlantContext)
+    
 
     //for edit, hold on to state of plants in this view
     const [note, setNotes] = useState({})
+    const [currentPlant, setCurrentPlant] = useState({})
     
+
     //wait for data before button is active
     const [isLoading, setIsLoading] = useState(true);
 
@@ -20,7 +23,7 @@ export const NoteForm = () => {
     const {plantId} = useParams()
 
     // the history hook for managing session history
-	const history = useHistory();
+	  const history = useHistory();
 
     //when an input field changes, update state. This causes a re-render and updates the view.
     //Controlled component
@@ -70,27 +73,28 @@ export const NoteForm = () => {
     // Get plants. If plantId is in the URL, getPlantById
     useEffect(() => {
         if (noteId){
-        getNoteById(noteId)
+          getNoteById(noteId)
             .then(note => {
                 setNotes(note)
-                setIsLoading(false)
+                  setIsLoading(false)
         })
-        getPlantById(plantId)
+          getPlantById(plantId)
             .then(plant => {
                 setNotes(plant)
-                setIsLoading(false)
+                  setIsLoading(false)
         })
         } else {
-          setIsLoading(false)
+            getPlantById(plantId).then(setCurrentPlant)
+              setIsLoading(false)
         }
-    
     }, [])
 
 
     //since state controlls this component, we no longer need useRef(null) or ref
     return (
+      <>
+      <h2 className="noteForm__title">New note for your {currentPlant.commonName}</h2>
       <form className="noteForm">
-        <h2 className="noteForm__title">New Entry</h2>
         <fieldset>
           <div className="form-group">
             <label htmlFor="noteDate">Today's date: </label>
@@ -116,5 +120,6 @@ export const NoteForm = () => {
           }}>
         {noteId ? <>Save</> : <>Add Note</>}</button>
       </form>
+      </>
     )
 }
