@@ -13,6 +13,23 @@
     margin-top: 2rem;
 }
 
+.noteForm {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin: auto 20%; 
+    padding: 1.5%;
+    border: 4px solid gold;
+    border-style: double;
+    background-color: rgb(60, 179, 149);
+}
+
+.add-save-note-btn {
+    display: flex;
+    justify-content: center;
+    margin: .5rem auto;
+}
+
 .note-entry-date {
     display: flex;
     justify-content: flex-end;

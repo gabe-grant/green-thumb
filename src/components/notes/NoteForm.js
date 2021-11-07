@@ -108,7 +108,7 @@ export const NoteForm = () => {
             defaultValue={note.message}/>
           </div>
         </fieldset>
-        <button className="btn btn-primary"
+        <button className="add-save-note-btn"
           disabled={isLoading}
           onClick={event => {
             event.preventDefault() // Prevent browser from submitting the form and refreshing the page
